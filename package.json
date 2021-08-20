@@ -1,0 +1,33 @@
+{
+    "name": "lekhini",
+    "description": "( लेखिनि ) — An 🤔 opinionated pino & ndjson ✨ prettifier.",
+    "version": "0.0.0",
+    "license": "MIT",
+    "bin": "dist/lekhini.js",
+    "main": "dist/lekhini.js",
+    "homepage": "https://github.com/vsnthdev/lekhini#readme",
+    "bugs": "https://github.com/vsnthdev/lekhini/issues",
+    "author": {
+        "name": "Vasanth Developer",
+        "email": "vasanth@vasanthdeveloper.com",
+        "url": "https://vsnth.dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vsnthdev/lekhini.git"
+    },
+    "scripts": {
+        "dev": "tsc -w",
+        "build": "tsc -b --clean && tsc -b -i -f"
+    },
+    "keywords": [
+        "pino",
+        "emoji",
+        "ndjson",
+        "logger"
+    ],
+    "devDependencies": {
+        "@types/node": "^16.6.2",
+        "typescript": "^4.3.5"
+    }
+}
