@@ -4,10 +4,8 @@ const { prettifier } = require('../dist/lekhini')
 const logger = pino({
     prettifier,
     level: 10,
-    // prettyPrint: {
-    //     translateTime: 'yyyy-mm-dd HH:mm:ss',
-    //     emoji: true
-    // },
+    prettyPrint: {},
 })
 
 logger.info(new Error('hello world'))
+logger.info('hello world')
