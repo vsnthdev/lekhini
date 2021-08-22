@@ -10,7 +10,7 @@ export const filterIgnore = (ctx: any, config: any) => {
         .split(',')
         .filter(key => Boolean(key))
         .map(key => key.trim())
-        
+
     Object.keys(ctx)
         .filter(key => ignored.includes(key))
         .forEach(key => delete ctx[key])
@@ -21,7 +21,11 @@ export const filterIgnore = (ctx: any, config: any) => {
 // this function does the following things:
 // 1. not render the string if it's empty or undefined
 // 2. render the string in colors
-export default (value: string, fmt: (str: string) => string, ctx: any, config: any): string => {
+export default (
+    value: string,
+    fmt: (str: string) => string,
+    config: any,
+): string => {
     if ([undefined, ''].includes(value)) return ''
 
     // dummy format function if colorize is false

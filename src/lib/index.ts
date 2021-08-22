@@ -3,15 +3,16 @@
  *  Created On 20 August 2021
  */
 
-import merge from 'deepmerge';
+import merge from 'deepmerge'
+
+import { filterIgnore } from './fmt'
 import render from './render'
-import { filterIgnore } from './fmt';
 
 const defaults = {
     colorize: true,
     messageKey: 'msg',
     ignore: 'hostname, pid',
-    translateTime: 'yyyy-mm-dd HH:mm:ss'
+    translateTime: 'yyyy-mm-dd HH:mm:ss',
 }
 
 export default (config: any) => {

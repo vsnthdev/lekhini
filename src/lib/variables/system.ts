@@ -3,8 +3,9 @@
  *  Created On 22 August 2021
  */
 
+import chalk from 'chalk'
+
 import fmt from '../fmt'
-import chalk from 'chalk';
 
 export default (ctx: any, config: any): string[] => {
     // construct the required variable
@@ -14,9 +15,9 @@ export default (ctx: any, config: any): string[] => {
 
     // return the string
     return [
-        fmt(pid, chalk.magenta, ctx, config),
-        fmt(sep, chalk.gray.dim, ctx, config),
-        fmt(hostname, chalk.blue, ctx, config),
-        fmt(end, chalk.gray.dim, ctx, config)
+        fmt(pid, chalk.magenta, config),
+        fmt(sep, chalk.gray.dim, config),
+        fmt(hostname, chalk.blue, config),
+        fmt(end, chalk.gray.dim, config),
     ]
 }

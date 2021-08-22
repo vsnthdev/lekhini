@@ -3,21 +3,22 @@
  *  Created On 21 August 2021
  */
 
-import time from './variables/time'
 import system from './variables/system'
+import time from './variables/time'
 
-const render = (segments: string[]): string => segments
-    // join the array into a string
-    .join(' ')
+const render = (segments: string[]): string =>
+    segments
+        // join the array into a string
+        .join(' ')
 
-    // cut any beginning or trailing spaces
-    .trim()
+        // cut any beginning or trailing spaces
+        .trim()
 
-    // collapse multiple consecutive spaces into one
-    .replace(/  +/g, ' ')
+        // collapse multiple consecutive spaces into one
+        .replace(/  +/g, ' ')
 
-export default (ctx: any, config: any): string => [
-    time(ctx, config),
-    system(ctx, config)
-].map(segments => render(segments))
-.join(' ').concat('\n')
+export default (ctx: any, config: any): string =>
+    [time(ctx, config), system(ctx, config)]
+        .map(segments => render(segments))
+        .join(' ')
+        .concat('\n')

@@ -4,7 +4,7 @@
  *  Created On 20 August 2021
  */
 
-import lib from './lib/index';
+import lib from './lib/index'
 
 // check if this file has been imported
 // or executed
