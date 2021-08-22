@@ -4,18 +4,19 @@
  */
 
 import { DateTime } from 'luxon'
-import { ArgsImpl } from '../render';
+import fmt from '../fmt';
+import chalk from 'chalk';
 
-export default ({ config, ctx, colors }: ArgsImpl) => {
-    // pull the colors we'll be using
-    const { gray, grayDim } = colors
+export default (ctx: any, config: any): string[] => {
+    // if no time is found, we simple return
+    if (!ctx.time) return []
 
     // construct the required variable
     const time = DateTime.fromMillis(ctx.time).toFormat(config.translateTime)
     
     // return the string
     return [
-        gray(time),
-        grayDim('•')
-    ].join(' ')
+        fmt(time, chalk.gray, ctx, config),
+        fmt('•', chalk.gray.dim, ctx, config)
+    ]
 }

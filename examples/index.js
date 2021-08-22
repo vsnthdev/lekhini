@@ -4,7 +4,7 @@ const { prettifier } = require('../dist/lekhini')
 const logger = pino({
     prettifier,
     level: 10,
-    prettyPrint: {},
+    prettyPrint: true,
 })
 
 logger.info(new Error('hello world'))

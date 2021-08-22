@@ -5,11 +5,12 @@
 
 import merge from 'deepmerge';
 import render from './render'
-import getColors from './colors';
+import { filterIgnore } from './fmt';
 
 const defaults = {
-    messageKey: 'msg',
     colorize: true,
+    messageKey: 'msg',
+    ignore: 'hostname, pid',
     translateTime: 'yyyy-mm-dd HH:mm:ss'
 }
 
@@ -19,9 +20,9 @@ export default (config: any) => {
     config = merge(defaults, config)
 
     return (ctx: any) => {
-        // define the colors depending on the config
-        const colors = getColors(config)
+        // filter the ignored keys from context
+        ctx = filterIgnore(ctx, config)
 
-        return render({config, ctx, colors})
+        return render(ctx, config)
     }
 }

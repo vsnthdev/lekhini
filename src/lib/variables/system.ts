@@ -3,20 +3,20 @@
  *  Created On 22 August 2021
  */
 
-import { ArgsImpl } from '../render';
+import fmt from '../fmt'
+import chalk from 'chalk';
 
-export default ({ config, ctx, colors }: ArgsImpl) => {
-    // pull the colors we'll be using
-    const { magenta, gray, grayDim, blue } = colors
-
+export default (ctx: any, config: any): string[] => {
     // construct the required variable
     const { pid, hostname } = ctx
+    const sep = pid && hostname ? '⑀' : undefined
+    const end = pid || hostname ? '•' : undefined
 
     // return the string
     return [
-        magenta(pid),
-        gray('⑀'),
-        blue(hostname),
-        grayDim('•')
-    ].join(' ').trim()
+        fmt(pid, chalk.magenta, ctx, config),
+        fmt(sep, chalk.gray.dim, ctx, config),
+        fmt(hostname, chalk.blue, ctx, config),
+        fmt(end, chalk.gray.dim, ctx, config)
+    ]
 }

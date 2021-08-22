@@ -5,16 +5,19 @@
 
 import time from './variables/time'
 import system from './variables/system'
-import { ColorsImpl } from './colors';
 
-export interface ArgsImpl {
-    config: any
-    ctx: any
-    colors: ColorsImpl
-}
+const render = (segments: string[]): string => segments
+    // join the array into a string
+    .join(' ')
 
-export default ({config, ctx, colors}: ArgsImpl): string => [
-    time({config, ctx, colors}),
-    system({ config, ctx, colors}),
-    '\n'
-].join(' ')
+    // cut any beginning or trailing spaces
+    .trim()
+
+    // collapse multiple consecutive spaces into one
+    .replace(/  +/g, ' ')
+
+export default (ctx: any, config: any): string => [
+    time(ctx, config),
+    system(ctx, config)
+].map(segments => render(segments))
+.join(' ').concat('\n')
