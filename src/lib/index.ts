@@ -25,6 +25,9 @@ export default (config: any) => {
         // filter the ignored keys from context
         ctx = filterIgnore(ctx, config)
 
+        // transform the message type property
+        ctx.type = ctx.type ? ctx.type.toLowerCase() : 'string'
+
         return render(ctx, config)
     }
 }

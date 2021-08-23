@@ -3,6 +3,7 @@
  *  Created On 21 August 2021
  */
 
+import data from './variables/data'
 import emoji from './variables/emoji'
 import module from './variables/module'
 import msg from './variables/msg'
@@ -14,9 +15,6 @@ const render = (segments: string[]): string =>
     segments
         // join the array into a string
         .join(' ')
-
-        // cut any beginning or trailing spaces
-        .trim()
 
         // collapse multiple consecutive spaces into one
         .replace(/  +/g, ' ')
@@ -30,5 +28,6 @@ export default (ctx: any, config: any): string =>
             emoji(ctx, config),
             type(ctx, config),
             msg(ctx, config),
+            data(ctx, config),
         ].map(segments => render(segments)),
     ).concat('\n')
