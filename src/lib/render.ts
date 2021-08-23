@@ -7,6 +7,7 @@ import emoji from './variables/emoji'
 import module from './variables/module'
 import system from './variables/system'
 import time from './variables/time'
+import type from './variables/type'
 
 const render = (segments: string[]): string =>
     segments
@@ -26,5 +27,6 @@ export default (ctx: any, config: any): string =>
             system(ctx, config),
             module(ctx, config),
             emoji(ctx, config),
+            type(ctx, config),
         ].map(segments => render(segments)),
     ).concat('\n')
