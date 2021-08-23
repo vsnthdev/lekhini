@@ -3,6 +3,7 @@
  *  Created On 21 August 2021
  */
 
+import module from './variables/module'
 import system from './variables/system'
 import time from './variables/time'
 
@@ -18,7 +19,8 @@ const render = (segments: string[]): string =>
         .replace(/  +/g, ' ')
 
 export default (ctx: any, config: any): string =>
-    [time(ctx, config), system(ctx, config)]
-        .map(segments => render(segments))
-        .join(' ')
-        .concat('\n')
+    render(
+        [time(ctx, config), system(ctx, config), module(ctx, config)].map(
+            segments => render(segments),
+        ),
+    ).concat('\n')
