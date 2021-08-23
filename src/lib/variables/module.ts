@@ -12,6 +12,6 @@ export default (ctx: any, config: any): string[] => {
     // construct the required variable
     const { module } = ctx
 
-    // return the string
+    // return the segments
     return [fmt(module, chalk, config)]
 }

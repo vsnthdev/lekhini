@@ -9,6 +9,7 @@ import { filterIgnore } from './fmt'
 import render from './render'
 
 const defaults = {
+    emojis: true,
     colorize: true,
     messageKey: 'msg',
     ignore: 'hostname, pid',

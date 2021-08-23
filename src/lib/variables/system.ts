@@ -8,12 +8,12 @@ import chalk from 'chalk'
 import fmt from '../fmt'
 
 export default (ctx: any, config: any): string[] => {
-    // construct the required variable
+    // construct the required variables
     const { pid, hostname } = ctx
     const sep = pid && hostname ? '⑀' : undefined
     const end = pid || hostname ? '•' : undefined
 
-    // return the string
+    // return the segments
     return [
         fmt(pid, chalk.magenta, config),
         fmt(sep, chalk.gray.dim, config),

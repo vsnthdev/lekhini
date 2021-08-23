@@ -12,9 +12,9 @@ export default (ctx: any, config: any): string[] => {
     // if no time is found, we simple return
     if (!ctx.time) return []
 
-    // construct the required variable
+    // construct the required variables
     const time = DateTime.fromMillis(ctx.time).toFormat(config.translateTime)
 
-    // return the string
+    // return the segments
     return [fmt(time, chalk.gray, config), fmt('•', chalk.gray.dim, config)]
 }

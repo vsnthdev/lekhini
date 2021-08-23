@@ -7,5 +7,9 @@ const logger = pino({
     prettyPrint: true,
 })
 
-logger.info(new Error('hello world'))
-logger.info('hello world')
+logger.trace('I am a trace message')
+logger.debug('I am a debug message')
+logger.info('I am a info message')
+logger.warn('I am a warn message')
+logger.error('I am a error message')
+logger.fatal('I am a fatal message')
