@@ -5,6 +5,7 @@
 
 import emoji from './variables/emoji'
 import module from './variables/module'
+import msg from './variables/msg'
 import system from './variables/system'
 import time from './variables/time'
 import type from './variables/type'
@@ -28,5 +29,6 @@ export default (ctx: any, config: any): string =>
             module(ctx, config),
             emoji(ctx, config),
             type(ctx, config),
+            msg(ctx, config),
         ].map(segments => render(segments)),
     ).concat('\n')
