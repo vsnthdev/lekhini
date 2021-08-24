@@ -4,9 +4,8 @@
  *  Created On 23 August 2021
  */
 
-import highlight from 'cli-highlight'
 import merge from 'deepmerge'
-import yaml from 'js-yaml'
+import pretty from 'prettyoutput'
 
 export default (ctx: any, config: any): string[] => {
     // construct base variables
@@ -19,14 +18,7 @@ export default (ctx: any, config: any): string[] => {
     if (!data) return []
     if (ctx.type != 'string') return []
 
-    const str = highlight(
-        yaml.dump(data, {
-            indent: 4,
-        }),
-        {
-            language: 'yaml',
-        },
-    )
+    const str = pretty(data)
 
     // return the segments
     return [`\n${str}`]

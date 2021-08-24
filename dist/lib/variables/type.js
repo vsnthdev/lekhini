@@ -32,7 +32,7 @@ const map = {
     },
     60: {
         name: 'fatal',
-        color: chalk_1.default.bgRedBright.whiteBright,
+        color: chalk_1.default.bgRed.whiteBright,
     },
 };
 exports.default = (ctx, config) => {

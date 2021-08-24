@@ -8,9 +8,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const cli_highlight_1 = __importDefault(require("cli-highlight"));
 const deepmerge_1 = __importDefault(require("deepmerge"));
-const js_yaml_1 = __importDefault(require("js-yaml"));
+const prettyoutput_1 = __importDefault(require("prettyoutput"));
 exports.default = (ctx, config) => {
     // construct base variables
     const data = typeof ctx[config.messageKey] == 'object'
@@ -21,11 +20,7 @@ exports.default = (ctx, config) => {
         return [];
     if (ctx.type != 'string')
         return [];
-    const str = cli_highlight_1.default(js_yaml_1.default.dump(data, {
-        indent: 4,
-    }), {
-        language: 'yaml',
-    });
+    const str = prettyoutput_1.default(data);
     // return the segments
     return [`\n${str}`];
 };

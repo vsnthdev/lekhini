@@ -30,7 +30,7 @@ const map = {
     },
     60: {
         name: 'fatal',
-        color: chalk.bgRedBright.whiteBright,
+        color: chalk.bgRed.whiteBright,
     },
 }
 
