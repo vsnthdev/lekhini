@@ -10,6 +10,6 @@ const logger = pino({
 logger.trace('I am a trace message')
 logger.debug('I am a debug message')
 logger.info('I am a info message')
-logger.warn('I am a warn message')
+logger.warn(new Error('there is something wrong!'))
 logger.error('I am a error message')
 logger.fatal('I am a fatal message')

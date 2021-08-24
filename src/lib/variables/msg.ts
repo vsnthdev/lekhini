@@ -9,7 +9,8 @@ import fmt from '../fmt'
 
 export default (ctx: any, config: any): string[] => {
     // construct base variables
-    const msg = ctx[config.messageKey]
+    let msg = ctx[config.messageKey]
+    if (typeof msg == 'object') msg = 'See the below data :point_down:'
 
     // return the segments
     return [fmt(msg, chalk, config)]

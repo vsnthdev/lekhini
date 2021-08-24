@@ -11,6 +11,7 @@ const data_1 = __importDefault(require("./variables/data"));
 const emoji_1 = __importDefault(require("./variables/emoji"));
 const module_1 = __importDefault(require("./variables/module"));
 const msg_1 = __importDefault(require("./variables/msg"));
+const stack_1 = __importDefault(require("./variables/stack"));
 const system_1 = __importDefault(require("./variables/system"));
 const time_1 = __importDefault(require("./variables/time"));
 const type_1 = __importDefault(require("./variables/type"));
@@ -27,4 +28,5 @@ exports.default = (ctx, config) => render([
     type_1.default(ctx, config),
     msg_1.default(ctx, config),
     data_1.default(ctx, config),
+    stack_1.default(ctx, config),
 ].map(segments => render(segments))).concat('\n');

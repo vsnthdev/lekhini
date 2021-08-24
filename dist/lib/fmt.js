@@ -5,6 +5,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.filterIgnore = void 0;
+const node_emoji_1 = require("node-emoji");
 // removes the filtered keys from the context
 // so they don't get rendered
 const filterIgnore = (ctx, config) => {
@@ -27,5 +28,5 @@ exports.default = (value, fmt, config) => {
     // dummy format function if colorize is false
     if (!config.colorize)
         fmt = (str) => str;
-    return fmt(value);
+    return fmt(node_emoji_1.emojify(value));
 };

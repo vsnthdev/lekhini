@@ -3,6 +3,8 @@
  *  Created On 23 August 2021
  */
 
+import { emojify } from 'node-emoji'
+
 // removes the filtered keys from the context
 // so they don't get rendered
 export const filterIgnore = (ctx: any, config: any) => {
@@ -31,5 +33,5 @@ export default (
     // dummy format function if colorize is false
     if (!config.colorize) fmt = (str: string) => str
 
-    return fmt(value)
+    return fmt(emojify(value))
 }

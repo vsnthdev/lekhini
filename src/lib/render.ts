@@ -7,6 +7,7 @@ import data from './variables/data'
 import emoji from './variables/emoji'
 import module from './variables/module'
 import msg from './variables/msg'
+import stack from './variables/stack'
 import system from './variables/system'
 import time from './variables/time'
 import type from './variables/type'
@@ -29,5 +30,6 @@ export default (ctx: any, config: any): string =>
             type(ctx, config),
             msg(ctx, config),
             data(ctx, config),
+            stack(ctx, config),
         ].map(segments => render(segments)),
     ).concat('\n')
