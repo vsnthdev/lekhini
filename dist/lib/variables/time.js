@@ -8,14 +8,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const chalk_1 = __importDefault(require("chalk"));
-const luxon_1 = require("luxon");
+const date_and_time_1 = __importDefault(require("date-and-time"));
 const fmt_1 = __importDefault(require("../fmt"));
 exports.default = (ctx, config) => {
-    // if no time is found, we simple return
+    // if no time is found, we simply return
     if (!ctx.time)
         return [];
     // construct the required variables
-    const time = luxon_1.DateTime.fromMillis(ctx.time).toFormat(config.translateTime);
+    const date = new Date(ctx.time);
+    const str = date_and_time_1.default.format(date, config.translateTime);
     // return the segments
-    return [fmt_1.default(time, chalk_1.default.gray, config), fmt_1.default('•', chalk_1.default.gray.dim, config)];
+    return [fmt_1.default(str, chalk_1.default.gray, config), fmt_1.default('•', chalk_1.default.gray.dim, config)];
 };

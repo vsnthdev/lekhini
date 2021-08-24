@@ -15,7 +15,7 @@ const defaults = {
     colorize: true,
     messageKey: 'msg',
     ignore: 'hostname, pid',
-    translateTime: 'yyyy-mm-dd HH:mm:ss',
+    translateTime: 'YYYY-MM-DD HH:mm:ss',
 };
 exports.default = (config) => {
     // merge with our default values so, we are sure

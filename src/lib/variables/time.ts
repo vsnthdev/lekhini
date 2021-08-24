@@ -4,17 +4,18 @@
  */
 
 import chalk from 'chalk'
-import { DateTime } from 'luxon'
+import dateTime from 'date-and-time'
 
 import fmt from '../fmt'
 
 export default (ctx: any, config: any): string[] => {
-    // if no time is found, we simple return
+    // if no time is found, we simply return
     if (!ctx.time) return []
 
     // construct the required variables
-    const time = DateTime.fromMillis(ctx.time).toFormat(config.translateTime)
+    const date = new Date(ctx.time)
+    const str = dateTime.format(date, config.translateTime)
 
     // return the segments
-    return [fmt(time, chalk.gray, config), fmt('•', chalk.gray.dim, config)]
+    return [fmt(str, chalk.gray, config), fmt('•', chalk.gray.dim, config)]
 }

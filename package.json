@@ -30,8 +30,8 @@
     ],
     "dependencies": {
         "chalk": "^4.1.2",
+        "date-and-time": "^2.0.0",
         "deepmerge": "^4.2.2",
-        "luxon": "^2.0.2",
         "node-emoji": "^1.11.0",
         "prettyoutput": "^1.2.0"
     },
@@ -43,6 +43,7 @@
         "@babel/eslint-parser": "^7.15.0",
         "@babel/plugin-syntax-top-level-await": "^7.14.5",
         "@types/chalk": "^2.2.0",
+        "@types/date-and-time": "^0.13.0",
         "@types/js-yaml": "^4.0.3",
         "@types/luxon": "^2.0.0",
         "@types/node": "^16.6.2",
