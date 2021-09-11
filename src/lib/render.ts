@@ -12,17 +12,24 @@ import system from './variables/system'
 import time from './variables/time'
 import type from './variables/type'
 
-const render = (segments: string[]): string =>
-    segments
+export interface RenderOptionsImpl {
+    segments: Array<string[]> | RenderOptionsImpl
+}
+
+const render = (options: RenderOptionsImpl): string => {
+    const rendered = (options.segments as string[])
         // join the array into a string
         .join(' ')
 
         // collapse multiple consecutive spaces into one
         .replace(/  +/g, ' ')
 
-export default (ctx: any, config: any): string =>
-    render(
-        [
+    return rendered
+}
+
+export default (ctx: any, config: any): string => {
+    const rendered = render({
+        segments: [
             time(ctx, config),
             system(ctx, config),
             module(ctx, config),
@@ -31,5 +38,8 @@ export default (ctx: any, config: any): string =>
             msg(ctx, config),
             data(ctx, config),
             stack(ctx, config),
-        ].map(segments => render(segments)),
-    ).concat('\n')
+        ],
+    })
+
+    return rendered
+}
