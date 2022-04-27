@@ -19,3 +19,8 @@ export const filterIgnore = (log: any, config: Config) => {
 
     return log
 }
+
+// dummy colorize function that outputs
+// default text with no formatting
+export const colorize = (func: any, input: string, config: Config) =>
+    config.color ? func(input) : input
