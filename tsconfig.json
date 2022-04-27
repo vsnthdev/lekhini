@@ -2,16 +2,15 @@
     "compileOnSave": true,
     "compilerOptions": {
         "newLine": "LF",
-        "rootDir": "src",
-        "outDir": "dist",
+        "rootDir": "src/",
+        "outDir": "dist/",
         "charset": "UTF-8",
-        "target": "ESNext",
+        "module": "ESNext",
+        "target": "ES2015",
         "declaration": true,
         "incremental": true,
         "alwaysStrict": true,
-        "module": "CommonJS",
         "esModuleInterop": true,
-        "resolveJsonModule": true,
         "moduleResolution": "node",
         "preserveConstEnums": true
     }

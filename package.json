@@ -16,6 +16,9 @@
         "type": "git",
         "url": "https://github.com/vsnthdev/lekhini.git"
     },
+    "engines": {
+        "node": ">=18"
+    },
     "scripts": {
         "dev": "tsc -w",
         "build": "tsc -b --clean && tsc -b -i -f"
