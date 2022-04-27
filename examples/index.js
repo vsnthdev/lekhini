@@ -9,16 +9,13 @@ const log = pino({
     level: 10,
     transport: {
         target: '../dist/index.js',
-        levels: 10,
-        options: {
-            ignore: ''
-        }
+        levels: 10
     }
 })
 
 // log.trace('I am a trace message')
 // log.debug('I am a debug message')
-log.info('I am a info message')
+log.info({ module: 'server', msg: 'I am a info message' })
 // log.warn(new Error('there is something wrong!'))
 // log.error('I am a error message')
 // log.fatal('I am a fatal message')

@@ -6,6 +6,7 @@
 import { Config } from './index.js'
 import time from './segments/time.js'
 import system from './segments/system.js'
+import module from './segments/module.js'
 
 const render = (segments: string[]): string =>
     // join the array into a string
@@ -17,5 +18,6 @@ const render = (segments: string[]): string =>
 export default (log: any, config: Config) => 
     render([
         time(log, config),
-        system(log, config)
+        system(log, config),
+        module(log, config)
     ])
