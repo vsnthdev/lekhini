@@ -9,7 +9,10 @@ const log = pino({
     level: 10,
     transport: {
         target: '../dist/index.js',
-        levels: 10
+        levels: 10,
+        options: {
+            ignore: ''
+        }
     }
 })
 
