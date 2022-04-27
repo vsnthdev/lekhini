@@ -28,6 +28,8 @@ export default (config: any) => {
         // transform the message type property
         ctx.type = ctx.type ? ctx.type.toLowerCase() : 'string'
 
-        return render(ctx, config)
+        // a hotfix for https://github.com/pinojs/pino/issues/1412
+        process.stdout.write(render(ctx, config))
+        return ''
     }
 }

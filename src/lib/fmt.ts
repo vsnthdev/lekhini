@@ -33,5 +33,5 @@ export default (
     // dummy format function if colorize is false
     if (!config.colorize) fmt = (str: string) => str
 
-    return fmt(emojify(value))
+    return fmt(value)
 }

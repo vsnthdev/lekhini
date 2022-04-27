@@ -6,8 +6,7 @@
 
 import lib from './lib/index'
 
-// check if this file has been imported
-// or executed
+// check if this file has been imported or executed
 const isCLI = require.main === module
 
 export const prettifier = lib

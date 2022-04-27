@@ -7,24 +7,15 @@ import chalk from 'chalk'
 import dateTime from 'date-and-time'
 
 import fmt from '../fmt'
-import { RenderOptionsImpl } from '../render'
 
-export default (ctx: any, config: any): RenderOptionsImpl => {
-    const options: RenderOptionsImpl = {
-        segments: [],
-    }
-
+export default (ctx: any, config: any): string => {
     // if no time is found, we simply return
-    if (!ctx.time) return options
+    if (!ctx.time) return ''
 
     // construct the required variables
     const date = new Date(ctx.time)
     const str = dateTime.format(date, config.translateTime)
 
-    // add the segments
-    options.segments.push(fmt(str, chalk.gray, config))
-    options.segments.push(fmt('•', chalk.gray.dim, config))
-
-    // return the options
-    return options
+    // return rendered time
+    return fmt(str, chalk.gray, config) + ' ' + fmt('•', chalk.gray.dim, config)
 }

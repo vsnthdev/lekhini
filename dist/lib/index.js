@@ -26,6 +26,8 @@ exports.default = (config) => {
         ctx = fmt_1.filterIgnore(ctx, config);
         // transform the message type property
         ctx.type = ctx.type ? ctx.type.toLowerCase() : 'string';
-        return render_1.default(ctx, config);
+        // a hotfix for https://github.com/pinojs/pino/issues/1412
+        process.stdout.write(render_1.default(ctx, config));
+        return '';
     };
 };

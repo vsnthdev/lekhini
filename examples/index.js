@@ -7,7 +7,10 @@ const logger = pino({
     prettyPrint: true,
 })
 
-logger.trace('I am a trace message')
+logger.trace({
+    message: 'I am a trace message',
+    hostname: 'w2020',
+})
 logger.debug('I am a debug message')
 logger.info('I am a info message')
 logger.warn(new Error('there is something wrong!'))

@@ -13,10 +13,10 @@ const fmt_1 = __importDefault(require("../fmt"));
 exports.default = (ctx, config) => {
     // if no time is found, we simply return
     if (!ctx.time)
-        return [];
+        return '';
     // construct the required variables
     const date = new Date(ctx.time);
     const str = date_and_time_1.default.format(date, config.translateTime);
-    // return the segments
-    return [fmt_1.default(str, chalk_1.default.gray, config), fmt_1.default('•', chalk_1.default.gray.dim, config)];
+    // return rendered time
+    return fmt_1.default(str, chalk_1.default.gray, config) + ' ' + fmt_1.default('•', chalk_1.default.gray.dim, config);
 };
