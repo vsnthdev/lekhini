@@ -1,0 +1,17 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "newLine": "LF",
+        "rootDir": "src/lib",
+        "outDir": "dist/",
+        "charset": "UTF-8",
+        "module": "ESNext",
+        "target": "ES2022",
+        "declaration": true,
+        "incremental": true,
+        "alwaysStrict": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "preserveConstEnums": true
+    }
+}
