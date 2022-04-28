@@ -9,6 +9,7 @@ import system from './segments/system.js'
 import _module from './segments/module.js'
 import emoji from './segments/emoji.js'
 import _type from './segments/type.js'
+import msg from './segments/msg.js'
 import stack from './segments/stack.js'
 
 const render = (segments: string[]): string =>
@@ -25,5 +26,6 @@ export default (log: any, config: Config) =>
         _module(log, config),
         emoji(log, config),
         _type(log, config),
+        msg(log, config),
         stack(log, config)
     ])
