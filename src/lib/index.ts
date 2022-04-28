@@ -13,13 +13,21 @@ export interface Config {
     color: boolean
     ignore: string
     timeFormat: string
+    data: {
+        format: 'yml' | 'yaml' | 'json'
+        indent: number
+    }
 }
 
 const defaults: Config = {
     emoji: true,
     color: true,
     ignore: 'hostname, pid',
-    timeFormat: 'YYYY-MM-DD HH:mm:ss'
+    timeFormat: 'YYYY-MM-DD HH:mm:ss',
+    data: {
+        format: 'yml',
+        indent: 4
+    }
 }
 
 export default async (config: Config) => {

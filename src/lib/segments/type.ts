@@ -9,23 +9,23 @@ import { colorize } from '../format.js'
 
 const map = {
     10: {
-        name: 'trace',
+        name: 'trace ',
         color: chalk.magentaBright,
     },
     20: {
-        name: 'debug',
+        name: 'debug ',
         color: chalk.cyanBright,
     },
     30: {
-        name: 'info',
+        name: 'info  ',
         color: chalk.blueBright,
     },
     40: {
-        name: 'warn',
+        name: 'warn  ',
         color: chalk.yellowBright,
     },
     50: {
-        name: 'error',
+        name: 'error ',
         color: chalk.redBright,
     },
     60: {
@@ -36,5 +36,5 @@ const map = {
 
 export default (log: any, config: Config): string => {
     const type = map[log.level]
-    return colorize(type.color, type.name, config)
+    return colorize(type.color, type.name, config) + (log.level == 60 ? ' ' : '')
 }

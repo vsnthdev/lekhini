@@ -17,4 +17,4 @@ const map = {
 
 // handle disabling emojis
 export default (log: any, config: Config): string =>
-    config.emoji ? emoji.emojify(`:${map[log.level]}:`) : ''
+    config.emoji ? emoji.emojify(`:${map[log.level]}: `) : ''

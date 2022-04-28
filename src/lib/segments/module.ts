@@ -4,7 +4,6 @@
  *  Created On 27 April 2022
  */
 
-import chalk from 'chalk'
 import { Config } from '../index.js'
 import { colorize } from '../format.js'
 

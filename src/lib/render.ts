@@ -11,13 +11,11 @@ import emoji from './segments/emoji.js'
 import _type from './segments/type.js'
 import msg from './segments/msg.js'
 import stack from './segments/stack.js'
+import data from './segments/data.js'
 
 const render = (segments: string[]): string =>
     // join the array into a string
-    segments.join(' ')
-
-    // collapse multiple consecutive spaces into one
-    .replace(/  +/g, ' ')
+    segments.filter(segment => Boolean(segment)).join(' ')
 
 export default (log: any, config: Config) => 
     render([
@@ -27,5 +25,6 @@ export default (log: any, config: Config) =>
         emoji(log, config),
         _type(log, config),
         msg(log, config),
-        stack(log, config)
+        stack(log, config),
+        data(log, config)
     ])

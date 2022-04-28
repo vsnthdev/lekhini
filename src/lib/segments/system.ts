@@ -18,5 +18,5 @@ export default (log: any, config: Config): string => {
         colorize(chalk.gray.dim, sep, config),
         colorize(chalk.blue, hostname, config),
         colorize(chalk.gray.dim, end, config)
-    ].join(' ')
+    ].join(' ').replace(/  +/g, '  ')
 }
